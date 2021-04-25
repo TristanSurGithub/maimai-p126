@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Cyberpunk";
+    src: url("./../fonts/cyberpunk.ttf");
+}
+
+@font-face {
+    font-family: "CyberpunkNumber";
+    src: url("./../fonts/cyberpunk-number.ttf");
+}
+
+@font-face {
+    font-family: "BlenderProBold";
+    src: url("./../fonts/blender-pro-bold.otf");
+}
+
+@font-face {
+    font-family: "BlenderProBook";
+    src: url("./../fonts/blender-pro-book.otf");
+}
+
+:root {
+    --main-bg-color: #f4ed00;
+}
+
+body {
+    font-family: BlenderProBook, sans-serif;
+    background-color: var(--main-bg-color);
+}
+
+h1 {
+    font-family: Cyberpunk, sans-serif;
+    font-size: 48px;
+}
+
+h1 > span {
+    font-family: CyberpunkNumber, sans-serif;
+    font-size: 36px;
+}
+
+.img-cover {
+    width: 500px;
+}
