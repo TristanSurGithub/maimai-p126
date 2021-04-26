@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="row">
+        {% for notice in app.flashes('notice') %}
+            <span style="background: gold">{{ notice }}</span>
+        {% endfor %}
+    </div>
+    <div class="row">
+        {{ form(form) }}
+    </div>
+{% endblock %}
