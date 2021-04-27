@@ -1,24 +1,30 @@
 {% extends 'base.html.twig' %}
 {% block title %}Makigai Maimai p126{% endblock %}
 {% block body %}
-    <article>
-        <header>
-            <h1>Makigai Maimai p<span>126</span></h1>
-        </header>
-        <section class="container-content">
+    <header>
+        <h1 class="title">Makigai Maimai p<span>126</span></h1>
+    </header>
+    <section class="container-content">
             <img class="img-cover" src="{{ asset('assets/images/maimai-cover.jpg') }}"
                  alt="Voiture Makigai Maimai p126 en rouge ">
-            <p>La voiture qui sera parfaite pour ceux qui ont un budget serré. La Makigai Maimai p126 sera la
-                voiture produite en série la moins chère. Toutes les décisions de conception ont été prises
-                avec un seul objectif en tête : réduire les coûts ! Taille ? Aussi petite que possible
-                pouvant accueillir jusqu'à deux personnes. Moteur ? Probablement volé à une tondeuse à gazon.
-                Matériaux ? Plastique aussi résistant qu'une fourchette jetable. Classement aux tests de sécurité ?
-                À peine suffisant pour garder le statut de véhicule de rue. Le tout réuni dans un emballage
-                facilement abordable. Et ils disent que les sociétés ne s'occupent plus des intérêts des
-                consommateurs...</p>
-        </section>
-    </article>
-
-    <a href="{{ path('newsletter') }}">Abonnez-vous aux newsletter</a>
+        <p>La voiture qui sera parfaite pour ceux qui ont un budget serré. La Makigai Maimai p126 sera la
+            voiture produite en série la moins chère. Toutes les décisions de conception ont été prises
+            avec un seul objectif en tête : réduire les coûts !</p>
+        <p><span class="bold">Taille ?</span> Aussi petite que possible
+            pouvant accueillir jusqu'à deux personnes.</p>
+        <p><span class="bold">Moteur ?</span> Probablement volé à une tondeuse à gazon.</p>
+        <p><span class="bold">Matériaux ?</span> Plastique aussi résistant qu'une fourchette jetable.</p>
+        <p><span class="bold">Classement aux tests de sécurité ?</span> À peine suffisant pour garder le statut de
+            véhicule de rue. Le tout réuni dans un emballage
+            facilement abordable. Et ils disent que les sociétés ne s'occupent plus des intérêts des
+            consommateurs...</p>
+        <p><span class="bold">Prix ?</span> Seulement 14,000 €</p>
+        <p>Avec la <span class="bold">Maimai p126</span>, tu pourras rivaliser avec toutes les Twingo !!</p>
+    </section>
+    <div class="btn-content">
+        <button class="btn-newsletter">
+            <a href="{{ path('newsletter') }}">S'abonner aux newsletters</a>
+        </button>
+    </div>
 {% endblock %}
 
