@@ -31,7 +31,6 @@ final class NewsletterController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-            dump('C\'est valide', $form->getData());
             $mailer->send(
                 (new TemplatedEmail())->to($contact->email)
                     ->from('newsletter@makigai.com')

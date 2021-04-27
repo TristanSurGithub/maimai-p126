@@ -1,9 +1,20 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <div class="row">
-        {% for notice in app.flashes('notice') %}
-            <span style="background: gold">{{ notice }}</span>
-        {% endfor %}
+    <header>
+        <a href="{{ path('home') }}"><h1 class="title">Makigai Maimai p<span>126</span></h1></a>
+    </header>
+    <p class="form-information">Remplissez ce formulaire pour vous inscrire aux newsletters : </p>
+    {{ form_start(form) }}
+    <div id="form">
+        <div class="message">
+            {% for notice in app.flashes('notice') %}
+                <p style="background: gold">{{ notice }}</p>
+            {% endfor %}
+        </div>
+        {{ form_errors(form) }}
+        {{ form_row(form.name,  { 'label': 'Nom :'}) }}
+        {{ form_row(form.email, { 'label': 'Adresse électronique :'}) }}
+        {{ form_row(form.submit , { 'label': 'Je m\'abonne', 'attr': {'class': 'btn'}}) }}
     </div>
-        {{ form(form) }}
+    {{ form_end(form) }}
 {% endblock %}

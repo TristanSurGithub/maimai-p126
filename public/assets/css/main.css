@@ -22,6 +22,9 @@
     --main-bg-color: #f4ed00;
     --main-secondary-color: #000000;
     --main-white: #ffffff;
+    --main-black: #000000;
+    --main-validate: #63c12f;
+    --main-bg-form: #ffffffba;
 }
 
 body {
@@ -31,6 +34,7 @@ body {
     font-size: 16px;
     background-color: var(--main-bg-color);
 }
+
 .bold {
     font-weight: bold;
 }
@@ -50,13 +54,26 @@ h1 > span {
     font-size: 36px;
 }
 
+a:visited {
+   color: var(--main-black);
+}
+
 img {
     width: 100%;
+    border-radius: 25px;
+}
+
+.desciption {
+    background: var(--main-bg-form);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
 }
 .btn-content {
     text-align: center;
 }
-.btn-newsletter {
+
+.btn {
     background-color: var(--main-secondary-color);
     border: none;
     border-radius: 5px;
@@ -64,27 +81,80 @@ img {
     padding: 16px 32px;
     text-align: center;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 10px auto;
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
 }
 
-.btn-newsletter:hover {
-    background-color: var(--main-secondary-color);
+.btn:hover {
+    transition-duration: 0.5s;
+    box-shadow: 8px 8px 2px 1px rgba(0, 0, 0, .2);
 }
 
-.btn-newsletter > a {
+.btn input[type='submit']:hover {
+    background-color: var(--main-validate);
+    color: var(--main-black);
+    transition-duration: 0.5s;
+}
+
+.btn > a {
     color: var(--main-white);
     text-decoration: none;
 }
 
-.btn-newsletter > a:visited {
+.btn > a:hover {
     color: var(--main-white);
 }
+
+.btn > a:visited {
+    color: var(--main-white);
+}
+
+/*newsletter*/
+#form {
+    margin: 0 auto;
+    display: block;
+    background: var(--main-bg-form);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
+}
+
+#form > div {
+    display: flex;
+    margin: 10px 0;
+}
+
+.message {
+    display: block;
+}
+
+#form label {
+    flex: 1;
+}
+
 @media (min-width: 768px) {
     .container {
         margin: 0 100px
     }
+
+    /*newsletter*/
+    .form-information {
+        text-align: center;
+    }
+    #form {
+        width: 30%;
+    }
+
+    #form > div {
+        justify-content: center;
+    }
+
+    #form label {
+        flex: 1 0 120px;
+        max-width: 150px;
+    }
+
 }
