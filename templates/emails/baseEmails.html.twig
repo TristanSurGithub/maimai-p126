@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<div class="container">
-    {% block body %}
-        <h1>{% block title %}{% endblock %}</h1>
-        <p></p>
-    {% endblock %}
-</div>
-</body>
-</html>
+{% apply inline_css(source('@styles/main.css')) %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+    </head>
+    <body>
+    <div class="container">
+        {% block body %}
+        {% endblock %}
+    </div>
+    </body>
+    </html>
+{% endapply %}

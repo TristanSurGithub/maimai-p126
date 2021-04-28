@@ -1,21 +1,21 @@
 @font-face {
     font-family: "Cyberpunk";
-    src: url("./../fonts/cyberpunk.ttf");
+    src: url("../fonts/cyberpunk.ttf");
 }
 
 @font-face {
     font-family: "CyberpunkNumber";
-    src: url("./../fonts/cyberpunk-number.ttf");
+    src: url("../fonts/cyberpunk-number.ttf");
 }
 
 @font-face {
     font-family: "BlenderProBold";
-    src: url("./../fonts/blender-pro-bold.otf");
+    src: url("../fonts/blender-pro-bold.otf");
 }
 
 @font-face {
     font-family: "BlenderProBook";
-    src: url("./../fonts/blender-pro-book.otf");
+    src: url("../fonts/blender-pro-book.otf");
 }
 
 :root {
@@ -23,7 +23,6 @@
     --main-secondary-color: #000000;
     --main-white: #ffffff;
     --main-black: #000000;
-    --main-validate: #63c12f;
     --main-bg-form: #ffffffba;
 }
 
@@ -53,7 +52,9 @@ h1 > span {
     font-family: CyberpunkNumber, sans-serif;
     font-size: 36px;
 }
-
+a {
+    text-decoration: none;
+}
 a:visited {
    color: var(--main-black);
 }
@@ -66,6 +67,7 @@ img {
 .desciption {
     background: var(--main-bg-form);
     border-radius: 25px;
+    margin: 20px;
     padding: 20px;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
 }
@@ -91,12 +93,6 @@ img {
 .btn:hover {
     transition-duration: 0.5s;
     box-shadow: 8px 8px 2px 1px rgba(0, 0, 0, .2);
-}
-
-.btn input[type='submit']:hover {
-    background-color: var(--main-validate);
-    color: var(--main-black);
-    transition-duration: 0.5s;
 }
 
 .btn > a {
@@ -137,7 +133,7 @@ img {
 
 @media (min-width: 768px) {
     .container {
-        margin: 0 100px
+        margin: 20px 100px 30px
     }
 
     /*newsletter*/

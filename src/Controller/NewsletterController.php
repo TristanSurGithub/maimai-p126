@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
@@ -21,9 +22,10 @@ final class NewsletterController extends AbstractController
 {
     public function __invoke(Request $request, MailerInterface $mailer)
     {
-        $contact = new Newsletter();
-        $builder = $this->createFormBuilder($contact)
-            ->add('name')
+        $dataNewsletter = new Newsletter();
+        $builder = $this->createFormBuilder($dataNewsletter)
+            ->add('lastname', TextType::class, array('required' => false))
+            ->add('firstname', TextType::class, array('required' => false))
             ->add('email', EmailType::class)
             ->add('submit', SubmitType::class);
 
@@ -32,15 +34,16 @@ final class NewsletterController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()){
             $mailer->send(
-                (new TemplatedEmail())->to($contact->email)
+                (new TemplatedEmail())->to($dataNewsletter->email)
                     ->from('newsletter@makigai.com')
-                    ->subject(sprintf('%s - from',$contact->name))
+                    ->subject(sprintf('Makigai Maimai p126 - Newsletter'))
                     ->htmlTemplate('emails/newsletter.html.twig')
                     ->context([
-                            'name' => $contact->name,
+                            'lastname' => empty($dataNewsletter->lastname )? '' : $dataNewsletter->lastname,
+                            'firstname' => empty($dataNewsletter->firstname )? '' : $dataNewsletter->firstname,
                             ])
             );
-            $this->addFlash('notice', 'Message envoyé');
+            $this->addFlash('notice', 'Vous êtes maintenant abonné 😀');
         }
         return $this->render('newsletter.html.twig', ['form'=>$form->createView()]);
     }

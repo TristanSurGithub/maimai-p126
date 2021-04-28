@@ -12,7 +12,8 @@
             {% endfor %}
         </div>
         {{ form_errors(form) }}
-        {{ form_row(form.name,  { 'label': 'Nom :'}) }}
+        {{ form_row(form.lastname,  { 'label': 'Nom (facultatif) :'}) }}
+        {{ form_row(form.firstname,  { 'label': 'Prénom (facultatif) :'}) }}
         {{ form_row(form.email, { 'label': 'Adresse électronique :'}) }}
         {{ form_row(form.submit , { 'label': 'Je m\'abonne', 'attr': {'class': 'btn'}}) }}
     </div>

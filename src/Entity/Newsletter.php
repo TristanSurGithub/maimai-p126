@@ -8,13 +8,20 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 final class Newsletter
 {
+
     /**
      * @Assert\Length(min=1)
-     * @Assert\NotBlank()
      */
-    public string $name;
+    public string $lastname;
+
+    /**
+     * @Assert\Length(min=1)
+     */
+    public string $firstname;
+
     /**
      * @Assert\Email()
      */
     public string $email;
+
 }

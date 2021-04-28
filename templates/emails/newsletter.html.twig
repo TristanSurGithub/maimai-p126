@@ -1,8 +1,12 @@
 {% extends 'emails/baseEmails.html.twig' %}
 {% block body %}
-    {% block title %}Makigai Maimai p126{% endblock %}
-    <img class="img-cover" src="{{ absolute_url('assets/images/maimai-cover.jpg') }}"
-         alt="Voiture Makigai Maimai p126 en rouge ">
-    <p>Bonjour {{ name }} merci de vous avoir inscrit à la newsletter</p>
-    <p>Vous serrez avertie de la sortie de la <span class="bold">Makigai Maimai p126</span> prochainement</p>
+    <h1 class="title">Makigai Maimai p126</h1>
+    <div class="container">
+        <img class="img-cover" src="{{ absolute_url('assets/images/maimai-1.png') }}"
+             alt="Voiture Makigai Maimai p126 en rouge ">
+        <div class="desciption">
+            <p>Salut à toi {% if firstname %}{{ firstname }}{% endif %}, merci de t'être inscrit à la newsletter !!</p>
+            <p>Tu seras averti de la sortie de la <span class="bold">Makigai Maimai p126</span> prochainement.</p>
+        </div>
+    </div>
 {% endblock %}
